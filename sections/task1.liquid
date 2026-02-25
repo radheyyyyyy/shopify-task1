@@ -27,8 +27,9 @@
       <h1>
         {{ section.settings.heading }}
       </h1>
-       <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "groupCells": true }'>
+     
       {% for block in section.blocks %}
+          <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "groupCells": true }'>
     {% for product in block.settings.products %}
       <div class="product">
         <div class="product-image">
@@ -42,8 +43,9 @@
         <p>{{ product.price | money | escape }}</p>
       </div>
     {% endfor %}
-  {% endfor %}
     </div>
+  {% endfor %}
+
       <button class="addtocartbtn" >ADD TO CART</button>
     </div>
   </div>
