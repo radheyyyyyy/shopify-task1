@@ -11,11 +11,7 @@
     grid-column: 1 / -1 !important;
     width: 100% !important;
   }
-  #shopify-section-{{ section.id }} .product {
-  width: 100%; /* Shows exactly one product at a time */
-  margin-right: 10px; /* Space between slides */
-  text-align: center;
-}
+
 #shopify-section-{{ section.id }} .flickity-prev-next-button {
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -138,7 +134,7 @@
 
 {% endschema %}
 <script>
-function initHotspotSync() {
+function hotspot() {
   const carouselElem = document.querySelector('#carousel-{{ section.id }}');
   const flkty = Flickity.data(carouselElem);
   if (!flkty) {
@@ -165,8 +161,7 @@ function initHotspotSync() {
   }
 }
 
-// Initial Run
-initHotspotSync();
-document.addEventListener('shopify:section:load',initHotspotSync);
+hotspot();
+document.addEventListener('shopify:section:load',hotspot);
 
 </script>
