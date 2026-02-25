@@ -138,26 +138,33 @@
 
 {% endschema %}
 <script>
- function hotspot(){
-    const dots=document.querySelectorAll('.hotspot-dot');
-    const btns=document.querySelectorAll('.flickity-prev-next-button');
-    console.log(btns)
-    btns.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-    console.log(btn);
-    })})
-    dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-    dots.forEach(d=>{d.classList.remove('pulse-active')})
-    dot.classList.add('pulse-active');
-    const carouselElem = document.querySelector('#carousel-{{ section.id }}');
-    const flkty = Flickity.data(carouselElem);
-    flkty.select(index); 
-  });
-});
 
-}
-hotspot();
-document.addEventListener('shopify:section:load',hotspot);
+ function hotspotSync() {
+    const sectionId = '{{ section.id }}';
+    const carouselElem = document.querySelector(`#carousel-${sectionId}`);
+    const flkty = Flickity.data(carouselElem);
+    if (!flkty) return;
+    const dots = document.querySelectorAll('.hotspot-dot');
+    flkty.on('select', function() {
+      dots.forEach(dot => dot.classList.remove('pulse-active'));
+      
+      const activeDot = dots[flkty.selectedIndex];
+      if (activeDot) {
+        activeDot.classList.add('pulse-active');
+      }
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        flkty.select(index);
+      });
+    });
+
+    if (dots[flkty.selectedIndex]) {
+      dots[flkty.selectedIndex].classList.add('pulse-active');
+    }
+ }
+hotspotSync();
+document.addEventListener('shopify:section:load',hotspotSync);
 
 </script>
