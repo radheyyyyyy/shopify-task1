@@ -110,6 +110,10 @@ body {
 .shopify-section > * {
   grid-column: 2;
 }
+.task1 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
 /* Child elements that use the full-width utility class span the entire viewport. */
 .shopify-section > .full-width {
