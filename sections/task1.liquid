@@ -138,6 +138,7 @@
 
 {% endschema %}
 <script>
+ function hotspot(){
     const dots=document.querySelectorAll('.hotspot-dot');
     
     dots.forEach((dot, index) => {
@@ -149,5 +150,8 @@
     flkty.select(index); 
   });
 });
+}
+hotspot();
+document.addEventListener('shopify:section:load',hotspot);
 
 </script>
