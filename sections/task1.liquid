@@ -138,8 +138,10 @@
 
 {% endschema %}
 <script>
-    document.querySelectorAll('.hotspot-dot').forEach((dot, index) => {
-  dot.addEventListener('click', () => {
+    const dots=document.querySelectorAll('.hotspot-dot');
+    dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+     dots.forEach(d => d.classList.remove('active'));
      dot.classList.add('active');
     const carouselElem = document.querySelector('#carousel-{{ section.id }}');
     const flkty = Flickity.data(carouselElem);
