@@ -136,3 +136,16 @@
   }
 
 {% endschema %}
+<script>
+    document.querySelectorAll('.hotspot-dot').forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    const carouselElem = document.querySelector('#carousel-{{ section.id }}');
+    const flkty = Flickity.data(carouselElem);
+    
+    // Slide to the index that matches this hotspot
+    // (Ensure your blocks order matches your hotspot order)
+    flkty.select(index); 
+  });
+});
+
+</script>
