@@ -12,16 +12,23 @@
     "task1_WXU3Hx": {
       "type": "task1",
       "blocks": {
+        "product_hjrdnY": {
+          "type": "product",
+          "settings": {
+            "products": [
+              "black-leather-bag"
+            ]
+          }
+        },
         "product_JAMj8U": {
           "type": "product",
           "settings": {
-            "proimage_url": "shopify://shop_images/putting-on-your-shoes_925x_93fb5bca-4228-4af6-9aad-4344c01e5c84.jpg",
-            "title": "Product name or title",
-            "price": 999
+            "products": []
           }
         }
       },
       "block_order": [
+        "product_hjrdnY",
         "product_JAMj8U"
       ],
       "name": "Task 1 section",
