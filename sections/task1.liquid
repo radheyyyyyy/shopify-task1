@@ -150,30 +150,7 @@
     flkty.select(index); 
   });
 });
-// 1. Initialize Flickity
-var carouselElement = document.querySelector('.main-carousel');
-var flickity = new Flickity(carouselElement, {
-  // options
-});
 
-// 2. Target the buttons after initialization
-var prevButton = carouselElement.querySelector('.flickity-prev-next-button.previous');
-var nextButton = carouselElement.querySelector('.flickity-prev-next-button.next');
-
-// 3. Add click listeners
-if (prevButton) {
-  prevButton.addEventListener('click', function() {
-    console.log('Previous button clicked!');
-    // Add your custom logic here
-  });
-}
-
-if (nextButton) {
-  nextButton.addEventListener('click', function() {
-    console.log('Next button clicked!');
-    // Add your custom logic here
-  });
-}
 }
 hotspot();
 document.addEventListener('shopify:section:load',hotspot);
