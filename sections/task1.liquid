@@ -143,12 +143,7 @@
     const carouselElem = document.querySelector('#carousel-{{ section.id }}');
     const flkty = Flickity.data(carouselElem);
     if(!flkty || !carouselElem || dots.length===0) return;
-    flkty.on('change',(index)=>{
-         dots.forEach(d=>{d.classList.remove('pulse-active')});
-         if(dots[index]){
-        dots[index].classList.add('pulse-active');
-        }
-    })
+    
     dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
     dots.forEach(d=>{d.classList.remove('pulse-active')})
