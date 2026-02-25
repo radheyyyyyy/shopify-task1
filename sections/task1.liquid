@@ -36,12 +36,21 @@
       {% else %}
         <img src="{{'default.jpg' |  asset_img_url:'medium'}}" />
       {% endif %}
+      {% for block in section.blocks %}
+     {% if block.type == 'hotspot' %}
+      <div class="hotspot-dot" 
+           style="left: {{ block.settings.x_pos }}%; top: {{ block.settings.y_pos }}%;"
+           data-product-handle="{{ block.settings.product.handle }}">
+        <span class="hotspot-icon"></span>
+      </div>
+    {% endif %}
+  {% endfor %}
     </div>
     <div class="task1-container">
       <h1>
         {{ section.settings.heading }}
       </h1>
-       <div class="main-carousel" data-flickity='{ "cellAlign": "center", "contain": true, "pageDots": false, "groupCells": false ,"wrapAround":true}'>
+       <div id="carousel-{{ section.id }}" class="main-carousel" data-flickity='{ "cellAlign": "center", "contain": true, "pageDots": false, "groupCells": false ,"wrapAround":true}'>
       {% for block in section.blocks %}
     {% for product in block.settings.products %}
       <div class="product">
@@ -59,15 +68,7 @@
     {% endfor %}
   {% endfor %}
     </div>
-     {% for block in section.blocks %}
-     {% if block.type == 'hotspot' %}
-      <div class="hotspot-dot" 
-           style="left: {{ block.settings.x_pos }}%; top: {{ block.settings.y_pos }}%;"
-           data-product-handle="{{ block.settings.product.handle }}">
-        <span class="hotspot-icon"></span>
-      </div>
-    {% endif %}
-  {% endfor %}
+     
       <button class="addtocartbtn" >ADD TO CART</button>
     </div>
   </div>
@@ -141,9 +142,6 @@
   dot.addEventListener('click', () => {
     const carouselElem = document.querySelector('#carousel-{{ section.id }}');
     const flkty = Flickity.data(carouselElem);
-    
-    // Slide to the index that matches this hotspot
-    // (Ensure your blocks order matches your hotspot order)
     flkty.select(index); 
   });
 });
