@@ -138,29 +138,16 @@
 
 {% endschema %}
 <script>
-<script>
-document.addEventListener('shopify:section:load', function(event) {
-  if (event.target.querySelector('#carousel-{{ section.id }}')) {
-    initCarousel();
-  }
-});
-
-document.addEventListener('DOMContentLoaded', initCarousel);
-function initCarousel() {
-  const carouselElem = document.querySelector('#carousel-{{ section.id }}');
-  if (!carouselElem) return;
-
-  const dots = document.querySelectorAll('.hotspot-dot');
-  dots.forEach((dot, index) => {
+    const dots=document.querySelectorAll('.hotspot-dot');
+    
+    dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-      const flkty = Flickity.data(carouselElem);
-      if (flkty) {
-        dot.classList.add('active');
-        flkty.select(index);
-      }
-    });
+    dots.forEach(d=>{d.classList.remove('pulse-active')})
+    dot.classList.add('pulse-active');
+    const carouselElem = document.querySelector('#carousel-{{ section.id }}');
+    const flkty = Flickity.data(carouselElem);
+    flkty.select(index); 
   });
-}
-</script>
+});
 
 </script>
