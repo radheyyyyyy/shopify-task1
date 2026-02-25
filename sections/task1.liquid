@@ -140,18 +140,16 @@
 <script>
  function hotspot(){
     const dots=document.querySelectorAll('.hotspot-dot');
-    const carouselElem = document.querySelector('#carousel-{{ section.id }}');
-    const flkty = Flickity.data(carouselElem);
-    if(!flkty || !carouselElem || dots.length===0) return;
     
     dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
     dots.forEach(d=>{d.classList.remove('pulse-active')})
     dot.classList.add('pulse-active');
+    const carouselElem = document.querySelector('#carousel-{{ section.id }}');
+    const flkty = Flickity.data(carouselElem);
     flkty.select(index); 
   });
 });
-
 }
 hotspot();
 document.addEventListener('shopify:section:load',hotspot);
