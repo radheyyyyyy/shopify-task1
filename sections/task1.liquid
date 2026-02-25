@@ -143,7 +143,6 @@
     const sectionId = '{{ section.id }}';
     const carouselElem = document.querySelector(`#carousel-${sectionId}`);
     const flkty = Flickity.data(carouselElem);
-    if (!flkty) return;
     const dots = document.querySelectorAll('.hotspot-dot');
     flkty.on('select', function() {
       dots.forEach(dot => dot.classList.remove('pulse-active'));
