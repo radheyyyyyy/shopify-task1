@@ -147,7 +147,7 @@ function initHotspotSync() {
   }
 
   const sectionContainer = carouselElem.closest('.shopify-section');
-  const dots = document.getElementsByClassName('.hotspot-dot');
+  const dots = sectionContainer.querySelectorAll('.hotspot-dot');
   flkty.on('select', function() {
     dots.forEach(dot => dot.classList.remove('pulse-active'));
     if (dots[flkty.selectedIndex]) {
