@@ -138,15 +138,24 @@
 
 {% endschema %}
 <script>
-    const dots=document.querySelectorAll('.hotspot-dot');
-    dots.forEach(d=>{d.classList.remove('pulse-active')})
-    dots.forEach((dot, index) => {
+<script>
+document.addEventListener('shopify:section:load', initCarousel);
+
+function initCarousel() {
+  const carouselElem = document.querySelector('#carousel-{{ section.id }}');
+  if (!carouselElem) return;
+
+  const dots = document.querySelectorAll('.hotspot-dot');
+  dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-     dot.classList.add('pulse-active');
-    const carouselElem = document.querySelector('#carousel-{{ section.id }}');
-    const flkty = Flickity.data(carouselElem);
-    flkty.select(index); 
+      const flkty = Flickity.data(carouselElem);
+      if (flkty) {
+        dot.classList.add('active');
+        flkty.select(index);
+      }
+    });
   });
-});
+}
+</script>
 
 </script>
