@@ -1,11 +1,9 @@
-.task1-fullwidth {
+.shopify-section .task1 {
   --page-margin: 0px !important;
   grid-template-columns: 100% !important;
   display: block !important;
-  width: 100% !important;
 }
-
-.task1-fullwidth > * {
+.shopify-section .task1 > * {
   grid-column: 1 / -1 !important;
   width: 100% !important;
 }
