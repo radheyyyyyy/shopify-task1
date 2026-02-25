@@ -140,7 +140,7 @@
 <script>
  function hotspot(){
     const dots=document.querySelectorAll('.hotspot-dot');
-    
+    const btns=document.getElementsByClassName('.flickity-prev-next-button')
     dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
     dots.forEach(d=>{d.classList.remove('pulse-active')})
