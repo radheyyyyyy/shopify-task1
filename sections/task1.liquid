@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
 <style>
   #shopify-section-{{ section.id }} {
     --page-margin: 0px !important;
@@ -24,6 +26,7 @@
       <h1>
         {{ section.settings.heading }}
       </h1>
+       <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "groupCells": true }'>
       {% for block in section.blocks %}
     {% for product in block.settings.products %}
       <div class="product">
@@ -39,10 +42,8 @@
       </div>
     {% endfor %}
   {% endfor %}
+  </div>
       <button class="addtocartbtn" >ADD TO CART</button>
-     
-        
-    
     </div>
   </div>
 </section>
