@@ -140,21 +140,12 @@
 <script>
 function initHotspotSync() {
   const carouselElem = document.querySelector('#carousel-{{ section.id }}');
-  if (!carouselElem) return;
-
-  // Try to find the Flickity instance
   const flkty = Flickity.data(carouselElem);
-
-  // If Flickity isn't ready yet, wait 100ms and try again
   if (!flkty) {
     setTimeout(initHotspotSync, 100);
     return;
-  }
-
-  const sectionContainer = carouselElem.closest('.shopify-section');
-  const dots = sectionContainer.querySelectorAll('.hotspot-dot');
-
-  // 1. Carousel -> Hotspots (The "Reverse" Sync)
+  }');
+  const dots = document.querySelectorAll('.hotspot-dot');
   flkty.on('select', function() {
     dots.forEach(dot => dot.classList.remove('pulse-active'));
     if (dots[flkty.selectedIndex]) {
@@ -162,14 +153,11 @@ function initHotspotSync() {
     }
   });
 
-  // 2. Hotspots -> Carousel (The "Forward" Sync)
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
       flkty.select(index);
     });
   });
-
-  // Set the first one as active immediately
   if (dots[flkty.selectedIndex]) {
     dots[flkty.selectedIndex].classList.add('pulse-active');
   }
