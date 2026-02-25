@@ -12,7 +12,7 @@
         {{ section.settings.heading }}
       </h1>
       {% for block in section.blocks %}
-        <div class="task1">
+        <div class="product">
           <div class="product-image">
             {% if block.settings.proimage_url != blank %}
               <img src="{{block.settings.proimage_url |  image_url: width:300 }}" />
@@ -73,7 +73,12 @@
     "max_blocks": 5,
     "presets": [
       {
-        "name": "Task 1 section"
+        "name": "Task 1 section",
+        "blocks": [
+            {
+            "type":"product"
+            }
+    ]
       }
     ]
   }
