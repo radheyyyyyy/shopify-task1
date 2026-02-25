@@ -66,6 +66,12 @@
 
 
 .active {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #fff;
   animation: pulse 2s infinite;
 }
 
