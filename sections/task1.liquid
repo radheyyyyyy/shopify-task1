@@ -1,0 +1,71 @@
+<section class="task1">
+    <div class="task1-div">
+        <div class="task1-img">
+            <img src="{{section.settings.iamge_url |  image_url:300}}"/>
+        </div>
+        <div class="task1-content">
+            <h1> {{section.settings.heading}} </h1>
+            {% for block in section.blocks %}
+            <div class="task1">
+                <div class="product-image">
+                    <img src="{{block.settings.proimage_url |  image_url: 300 }}"/>
+                </div>
+                <h2>{{block.settings.title}}</h2>
+                <h2>{{block.settings.price}}</h2>
+            </div>
+            {% endfor %}
+            <div class="addtocart">
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema  %} 
+{
+    "name":"task1",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "iamge_url",
+            "label": "image"
+        },{
+            "type": "text",
+            "id": "heading",
+            "default": "Complete the look",
+            "label":"heading"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "product",
+            "name":"products",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "proimage_url",
+                    "label": "product image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "product title",
+                    "default": "Product name or title"
+                },
+                {
+                    "type": "number",
+                    "id": "price",
+                    "label": "product price",
+                    "default": 999
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Task 1 section"
+        }
+    ]
+}
+
+{% endschema %}
