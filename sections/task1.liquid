@@ -138,7 +138,7 @@
 
 {% endschema %}
 <script>
-function initHotspotSync() {
+function hotspot() {
   const carouselElem = document.querySelector('#carousel-{{ section.id }}');
   const flkty = Flickity.data(carouselElem);
   if (!flkty) {
@@ -165,8 +165,7 @@ function initHotspotSync() {
   }
 }
 
-// Initial Run
-initHotspotSync();
-document.addEventListener('shopify:section:load',initHotspotSync);
+hotspot();
+document.addEventListener('shopify:section:load',hotspot);
 
 </script>
