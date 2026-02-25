@@ -14,6 +14,7 @@
 }
 .task1-img{
   width: 50%;
+  position:relative;
 }
 .task1-img img {
   display: block;
