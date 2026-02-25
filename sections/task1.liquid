@@ -142,7 +142,7 @@ function initHotspotSync() {
   const carouselElem = document.querySelector('#carousel-{{ section.id }}');
   const flkty = Flickity.data(carouselElem);
   if (!flkty) {
-    setTimeout(initHotspotSync, 100);
+    setTimeout(initHotspotSync, 1000);
     return;
   }');
   const dots = document.querySelectorAll('.hotspot-dot');
