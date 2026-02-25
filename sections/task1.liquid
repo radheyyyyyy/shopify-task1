@@ -139,8 +139,13 @@
 {% endschema %}
 <script>
 <script>
-document.addEventListener('shopify:section:load', initCarousel);
+document.addEventListener('shopify:section:load', function(event) {
+  if (event.target.querySelector('#carousel-{{ section.id }}')) {
+    initCarousel();
+  }
+});
 
+document.addEventListener('DOMContentLoaded', initCarousel);
 function initCarousel() {
   const carouselElem = document.querySelector('#carousel-{{ section.id }}');
   if (!carouselElem) return;
