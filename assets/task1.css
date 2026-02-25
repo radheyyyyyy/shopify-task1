@@ -28,13 +28,13 @@
   font-weight: 100;
 }
 .product h2 {
-  font-weight: 100;
+  font-weight: 300;
   margin-top:20px;
-  font-size:14px;
+  font-size:16px;
 }
 .product p{
-    font-weight:100;
-    font-size:14px;
+    font-weight:300;
+    font-size:16px;
 }
 
 .task1-container{
