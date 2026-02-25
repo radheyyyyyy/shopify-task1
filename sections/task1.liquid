@@ -141,7 +141,7 @@
  function hotspot(){
     const dots=document.querySelectorAll('.hotspot-dot');
     const btns=document.getElementsByClassName('flickity-prev-next-button');
-    btns.forEach(btn=>{
+    btns?.forEach(btn=>{
     btn.addEventListener('click',()=>{
     alert('hello')
     })})
