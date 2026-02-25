@@ -64,7 +64,7 @@
   z-index: 10;
  
 }
-.active{
+.pulse-active{
      animation: pulse 2s infinite;
 }
 

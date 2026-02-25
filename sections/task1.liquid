@@ -141,7 +141,7 @@
     const dots=document.querySelectorAll('.hotspot-dot');
     dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-     dot.classList.add('active');
+     dot.classList.add('pulse-active');
     const carouselElem = document.querySelector('#carousel-{{ section.id }}');
     const flkty = Flickity.data(carouselElem);
     flkty.select(index); 
