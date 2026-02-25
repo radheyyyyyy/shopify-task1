@@ -151,3 +151,8 @@ body {
   width: 50%;
   text-align: center;
 }
+.product-image{
+  display:flex;
+  justify-content:center;
+  align-items:center
+}
