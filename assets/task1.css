@@ -55,7 +55,6 @@
   background: #fff;
   border-radius: 50%;
   cursor: pointer;
-  transform: translate(-50%, -50%); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +66,7 @@
 .pulse-active{
     width:40px;
     height:40px;
-     animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
 }
 
 
