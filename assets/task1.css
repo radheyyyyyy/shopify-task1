@@ -17,6 +17,10 @@
   font-weight:100;
   margin-top: 25px;
 }
+
+.task1-div{
+  display: flex;
+}
 .task1-img{
   width: 50%;
 }
