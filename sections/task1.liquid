@@ -34,7 +34,7 @@
             {% endif %}
           </div>
           <h2>{{ block.settings.title | escape}}</h2>
-          <h2>{{ block.settings.price | money | escape}}</h2>
+          <p>{{ block.settings.price | money | escape}}</p>
         </div>
       {% endfor %}
       <button class="addtocartbtn" >ADD TO CART</button>
