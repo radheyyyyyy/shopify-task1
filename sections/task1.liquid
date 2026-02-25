@@ -140,24 +140,40 @@
 <script>
  function hotspot(){
     const dots=document.querySelectorAll('.hotspot-dot');
-    const carouselElem = document.querySelector('#carousel-{{ section.id }}');
-    const flkty = Flickity.data(carouselElem);
-    flkty.on('change',(index)=>{
-         dots.forEach(d=>{d.classList.remove('pulse-active')});
-         if(dots[index]){
-        dots[index].classList.add('pulse-active');
-        }
-    })
+    
     dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
     dots.forEach(d=>{d.classList.remove('pulse-active')})
     dot.classList.add('pulse-active');
-     const carouselEle = document.querySelector('#carousel-{{ section.id }}');
-    const flkt = Flickity.data(carouselEle);
-    flkt.select(index); 
+    const carouselElem = document.querySelector('#carousel-{{ section.id }}');
+    const flkty = Flickity.data(carouselElem);
+    flkty.select(index); 
   });
 });
+// 1. Initialize Flickity
+var carouselElement = document.querySelector('.main-carousel');
+var flickity = new Flickity(carouselElement, {
+  // options
+});
 
+// 2. Target the buttons after initialization
+var prevButton = carouselElement.querySelector('.flickity-prev-next-button.previous');
+var nextButton = carouselElement.querySelector('.flickity-prev-next-button.next');
+
+// 3. Add click listeners
+if (prevButton) {
+  prevButton.addEventListener('click', function() {
+    console.log('Previous button clicked!');
+    // Add your custom logic here
+  });
+}
+
+if (nextButton) {
+  nextButton.addEventListener('click', function() {
+    console.log('Next button clicked!');
+    // Add your custom logic here
+  });
+}
 }
 hotspot();
 document.addEventListener('shopify:section:load',hotspot);
