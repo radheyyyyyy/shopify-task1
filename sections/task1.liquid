@@ -15,7 +15,7 @@
   <div class="task1-div">
     <div class="task1-img">
       {% if section.settings.iamge_url != blank %}
-        <img src="{{section.settings.iamge_url |  image_url: width:200 }}" />
+        <img src="{{section.settings.iamge_url |  image_url }}" />
       {% else %}
         <img src="{{'default.jpg' |  asset_img_url:'medium'}}" />
       {% endif %}
