@@ -139,6 +139,7 @@
 {% endschema %}
 <script>
     const dots=document.querySelectorAll('.hotspot-dot');
+    dots.forEach(d=>{d.classList.remove('pulse-active')})
     dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
      dot.classList.add('pulse-active');
