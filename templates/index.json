@@ -9,27 +9,8 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "task1",
-      "blocks": {
-        "product_k6YW7q": {
-          "type": "product",
-          "settings": {
-            "title": "Product name or title",
-            "price": 999
-          }
-        }
-      },
-      "block_order": [
-        "product_k6YW7q"
-      ],
-      "settings": {
-        "iamge_url": "shopify://shop_images/banner.webp",
-        "heading": "Complete the look"
-      }
-    }
+ 
   },
   "order": [
-    "main"
   ]
 }
