@@ -17,8 +17,8 @@
 }
 .task1-img img {
   display: block;
-  width: 100%;      
-  height: auto;     
+  width: 765px;      
+  height: 765px;     
   max-width: 100%; 
   object-fit: cover; 
 }
@@ -29,7 +29,7 @@
 }
 .product h2 {
   font-weight: 300;
-  margin-top:20px;
+  margin-top:80px;
   font-size:16px;
 }
 .product p{
