@@ -23,7 +23,9 @@
         "product_JAMj8U": {
           "type": "product",
           "settings": {
-            "products": []
+            "products": [
+              "chequered-red-shirt"
+            ]
           }
         }
       },
