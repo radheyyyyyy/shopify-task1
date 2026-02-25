@@ -142,10 +142,12 @@ function initHotspotSync() {
   const carouselElem = document.querySelector('#carousel-{{ section.id }}');
   const flkty = Flickity.data(carouselElem);
   if (!flkty) {
-    setTimeout(initHotspotSync, 1000);
+    setTimeout(initHotspotSync, 100);
     return;
-  }');
-  const dots = document.querySelectorAll('.hotspot-dot');
+  }
+
+  const sectionContainer = carouselElem.closest('.shopify-section');
+  const dots = sectionContainer.querySelectorAll('.hotspot-dot');
   flkty.on('select', function() {
     dots.forEach(dot => dot.classList.remove('pulse-active'));
     if (dots[flkty.selectedIndex]) {
