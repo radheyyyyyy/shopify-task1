@@ -73,7 +73,7 @@
 
 @keyframes pulse {
      0% {
-        transform: scale(0.95);
+        transform: scale(2);
         box-shadow: 0 0 0 0 white;
     }
 
@@ -83,7 +83,7 @@
     }
 
     100% {
-        transform: scale(0.95);
+        transform: scale(2);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 
