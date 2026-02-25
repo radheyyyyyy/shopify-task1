@@ -142,6 +142,7 @@
     const dots=document.querySelectorAll('.hotspot-dot');
     const carouselElem = document.querySelector('#carousel-{{ section.id }}');
     const flkty = Flickity.data(carouselElem);
+    if(!flkty || !carouselElem || dots.length===0) return;
     flkty.on('change',(index)=>{
          dots.forEach(d=>{d.classList.remove('pulse-active')});
          if(dots[index]){
