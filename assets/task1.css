@@ -67,20 +67,8 @@
 .hotspot-dot:hover {
   transform: translate(-50%, -50%) scale(1.2);
   background: #000;
-  color: #fff;
 }
 
-.hotspot-dot::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  animation: pulse 2s infinite;
-}
 
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(2); opacity: 0; }
-}
+
+
