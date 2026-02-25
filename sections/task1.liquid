@@ -35,7 +35,7 @@
           {% endif %}
         </div>
         <h2>{{ product.title | escape }}</h2>
-        <p>{{ product.compare_at_price | money | escape }}</p>
+        <p>{{ product.price | money | escape }}</p>
       </div>
     {% endfor %}
   {% endfor %}
