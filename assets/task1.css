@@ -65,7 +65,7 @@
 }
 
 
-.hotspot-dot::after {
+.active {
   content: '';
   position: absolute;
   width: 100%;
