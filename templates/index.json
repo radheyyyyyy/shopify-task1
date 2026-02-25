@@ -9,8 +9,29 @@
  */
 {
   "sections": {
- 
+    "task1_WXU3Hx": {
+      "type": "task1",
+      "blocks": {
+        "product_JAMj8U": {
+          "type": "product",
+          "settings": {
+            "proimage_url": "shopify://shop_images/putting-on-your-shoes_925x_93fb5bca-4228-4af6-9aad-4344c01e5c84.jpg",
+            "title": "Product name or title",
+            "price": 999
+          }
+        }
+      },
+      "block_order": [
+        "product_JAMj8U"
+      ],
+      "name": "Task 1 section",
+      "settings": {
+        "iamge_url": "shopify://shop_images/banner.webp",
+        "heading": "Complete the look"
+      }
+    }
   },
   "order": [
+    "task1_WXU3Hx"
   ]
 }
