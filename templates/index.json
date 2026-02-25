@@ -12,6 +12,13 @@
     "task1_WXU3Hx": {
       "type": "task1",
       "blocks": {
+        "hotspot_XVepTm": {
+          "type": "hotspot",
+          "settings": {
+            "x_pos": 50,
+            "y_pos": 50
+          }
+        },
         "hotspot_8zc6qQ": {
           "type": "hotspot",
           "settings": {
@@ -37,6 +44,7 @@
         }
       },
       "block_order": [
+        "hotspot_XVepTm",
         "hotspot_8zc6qQ",
         "product_hjrdnY",
         "product_JAMj8U"
