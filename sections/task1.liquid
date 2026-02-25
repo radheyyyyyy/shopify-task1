@@ -7,7 +7,7 @@
         <img src="{{'default.jpg' |  asset_img_url:'medium'}}" />
       {% endif %}
     </div>
-    <div class="task1-content">
+    <div class="task1-container">
       <h1>
         {{ section.settings.heading }}
       </h1>
@@ -20,13 +20,14 @@
               <img src="{{'default.jpg' |  asset_img_url:'medium' }}" />
             {% endif %}
           </div>
-          <h2>{{ block.settings.title }}</h2>
-          <h2>{{ block.settings.price }}</h2>
+          <h2>{{ block.settings.title | escape}}</h2>
+          <h2>{{ block.settings.price | escape}}</h2>
         </div>
       {% endfor %}
-      <div class="addtocart">
-        <button>Add to cart</button>
-      </div>
+      <button class="addtocartbtn" >ADD TO CART</button>
+     
+        
+    
     </div>
   </div>
 </section>
