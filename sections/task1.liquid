@@ -11,6 +11,11 @@
     grid-column: 1 / -1 !important;
     width: 100% !important;
   }
+  #shopify-section-{{ section.id }} .product {
+  width: 100%; /* Shows exactly one product at a time */
+  margin-right: 10px; /* Space between slides */
+  text-align: center;
+}
 </style>
 {{ 'task1.css' | asset_url | stylesheet_tag }}
 
